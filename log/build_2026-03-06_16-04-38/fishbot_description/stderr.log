@@ -1,0 +1,6 @@
+[31mCMake Error at cmake_install.cmake:46 (file):
+  file INSTALL cannot find
+  "/home/jack/Desktop/jack_ws/chapt6/chapt6_ws/src/fishbot_description/config":
+  No such file or directory.
+
+[0m

@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="fishbot">
+
+    <!-- 机器人的身体部分 -->
+    <xacro:macro name="base_xacro" params="length radius">
+        <link name="base_footprint">
+            <inertial>
+                <mass value="0.01"/>
+                <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+            </inertial>
+        </link>
+
+        <link name="base_link">
+            <inertial>
+                <mass value="1.0"/>
+                <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="0.1"/>
+            </inertial>
+        <!-- 部件的外观 -->
+            <visual>
+                <!-- 沿着自己几何中心的偏移和旋转量 -->
+                <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+                <!-- 几何形状 -->
+                <geometry>
+                    <!-- 圆柱体 -->
+                    <cylinder radius="${radius}" length="${length}"/>
+                </geometry>
+                <!-- 材质和颜色 -->
+                <material name="white">
+                    <color rgba="1.0 1.0 1.0 0.5"/>
+                </material>
+            </visual>
+            <collision>
+                <!-- 沿着自己几何中心的偏移和旋转量 -->
+                <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+                <!-- 几何形状 -->
+                <geometry>
+                    <!-- 圆柱体 -->
+                    <cylinder radius="${radius}" length="${length}"/>
+                </geometry>
+                <!-- 材质和颜色 -->
+                <material name="white">
+                    <color rgba="1.0 1.0 1.0 0.5"/>
+                </material>
+            </collision>
+        </link>    
+
+        <joint name="base_joint" type="fixed">
+            <origin xyz="0.0 0.0 ${length/2.0+0.032-0.001}" rpy="0.0 0.0 0.0"/>
+            <parent link="base_footprint"/>
+            <child link="base_link"/>
+        </joint>
+    </xacro:macro>
+
+
+</robot>

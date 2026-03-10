@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="first_robot">
+    <xacro:macro name="caster_xacro" params="caster_name xyz">
+        <link name="${caster_name}_link">
+            <inertial>
+                <mass value="0.05"/>
+                <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+            </inertial>
+            <!-- 部件的外观 -->
+            <visual>
+                <!-- 沿着自己几何中心的偏移和旋转量 -->
+                <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+                <!-- 几何形状 -->
+                <geometry>
+                    <sphere radius="0.016"/>
+                </geometry>
+                <!-- 材质和颜色 -->
+                <material name="yellow">
+                    <color rgba="1.0 1.0 0 0.8"/>
+                </material>
+            </visual>
+            <collision>
+                <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+                <geometry>
+                    <sphere radius="0.016"/>
+                </geometry>
+                <material name="yellow">
+                    <color rgba="1.0 1.0 0 0.8"/>
+                </material>
+            </collision>
+        </link>
+
+        <joint name="${caster_name}_joint" type="fixed">
+            <origin xyz="${xyz}" rpy="0.0 0.0 0.0"/>
+            <parent link="base_link"/>
+            <child link="${caster_name}_link"/>
+        </joint>
+    </xacro:macro>
+</robot>

@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="first_robot">
+    <xacro:macro name="wheel_xacro" params="wheel_name xyz">
+        <link name="${wheel_name}_link">
+            <inertial>
+                <mass value="0.1"/>
+                <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+            </inertial>
+            <!-- 部件的外观 -->
+            <visual>
+                <!-- 沿着自己几何中心的偏移和旋转量 -->
+                <origin xyz="0.0 0.0 0.0" rpy="1.57079 0.0 0.0"/>
+                <!-- 几何形状 -->
+                <geometry>
+                    <cylinder radius="0.032" length="0.04"/>
+                </geometry>
+                <!-- 材质和颜色 -->
+                <material name="yellow">
+                    <color rgba="1.0 1.0 0 0.8"/>
+                </material>
+            </visual>
+            <collision>
+                <!-- 沿着自己几何中心的偏移和旋转量 -->
+                <origin xyz="0.0 0.0 0.0" rpy="1.57079 0.0 0.0"/>
+                <!-- 几何形状 -->
+                <geometry>
+                    <cylinder radius="0.032" length="0.04"/>
+                </geometry>
+                <!-- 材质和颜色 -->
+                <material name="yellow">
+                    <color rgba="1.0 1.0 0 0.8"/>
+                </material>
+            </collision>
+        </link>
+
+        <joint name="${wheel_name}_joint" type="continuous">
+            <origin xyz="${xyz}" rpy="0.0 0.0 0.0"/>
+            <parent link="base_link"/>
+            <child link="${wheel_name}_link"/>
+            <axis xyz="0.0 1 0.0"/>
+        </joint>
+    </xacro:macro>
+</robot>
