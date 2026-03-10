@@ -26,6 +26,7 @@
 /home/jack/Desktop/jack_ws/chapt6/chapt6_ws/install/fishbot_description/share/fishbot_description/urdf/fishbot/sensor/camera.urdf.xacro
 /home/jack/Desktop/jack_ws/chapt6/chapt6_ws/install/fishbot_description/share/fishbot_description/urdf/fishbot/sensor/imu.urdf.xacro
 /home/jack/Desktop/jack_ws/chapt6/chapt6_ws/install/fishbot_description/share/fishbot_description/urdf/fishbot/base.urdf.xacro
+/home/jack/Desktop/jack_ws/chapt6/chapt6_ws/install/fishbot_description/share/fishbot_description/urdf/fishbot/plugins/gazebo_control_plugin.xacro
 /home/jack/Desktop/jack_ws/chapt6/chapt6_ws/install/fishbot_description/share/fishbot_description/urdf/fishbot/fishbot.urdf.xacro
 /home/jack/Desktop/jack_ws/chapt6/chapt6_ws/install/fishbot_description/share/fishbot_description/urdf/first_robot.urdf
 /home/jack/Desktop/jack_ws/chapt6/chapt6_ws/install/fishbot_description/share/fishbot_description/urdf/first_robot.pdf
